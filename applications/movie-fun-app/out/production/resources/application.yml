@@ -16,11 +16,6 @@ logging.level:
   org.superbiz.moviefun: DEBUG
 
 s3:
-  endpointUrl: http://127.0.0.1:9000
-  accessKey: KLXYTPXA113A293TPMIB
-  secretKey: cGfn8Xqy/dmeGp/+iABevG5ZsF+TLm7LDtNVpO9W
-  bucketName: moviefun
-movies:
-  url: http://localhost:8082/movies
-albums:
-  url: http://localhost:8083/albums
+  accessKey: <access key id>
+  secretKey: <secret access key>
+  bucketName: <name of the bucket>
