@@ -18,7 +18,7 @@ public class MoviesController {
     }
 
     @PostMapping
-    public void addMovie(Movie movie) {
+    public void addMovie(@RequestBody Movie movie) {
        moviesRepository.addMovie(movie);
     }
 

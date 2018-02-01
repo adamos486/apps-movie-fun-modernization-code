@@ -27,6 +27,7 @@ public class MoviesClient {
     }
 
     public void addMovie(MovieInfo movie) {
+        logger.debug("WHAT KIND OF HOTEL IS THIS {}", movie.getTitle());
         moviesRestOps.postForEntity(moviesApiUrl, movie, MovieInfo.class);
     }
 
@@ -62,7 +63,6 @@ public class MoviesClient {
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(moviesApiUrl)
                 .queryParam("field", field)
                 .queryParam("key", key)
-                .queryParam("start", start)
                 .queryParam("pageSize", pageSize);
 
         return moviesRestOps.exchange(builder.toUriString(), GET, null, movieListType).getBody();

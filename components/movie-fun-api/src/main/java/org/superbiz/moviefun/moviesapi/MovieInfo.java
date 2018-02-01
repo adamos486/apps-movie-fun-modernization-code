@@ -1,15 +1,10 @@
 package org.superbiz.moviefun.moviesapi;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.io.Serializable;
 import java.util.Objects;
 
 public class MovieInfo {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+
+    private Long id;
 
     private String director;
     private String title;
@@ -17,7 +12,15 @@ public class MovieInfo {
     private String genre;
     private int rating;
 
-    public MovieInfo() {
+    public MovieInfo() {}
+
+    public MovieInfo(Long id, String title, String director, String genre, int rating, int year) {
+        this.id = id;
+        this.director = director;
+        this.title = title;
+        this.year = year;
+        this.genre = genre;
+        this.rating = rating;
     }
 
     public MovieInfo(String title, String director, String genre, int rating, int year) {
@@ -28,17 +31,11 @@ public class MovieInfo {
         this.rating = rating;
     }
 
-    public MovieInfo(String director, String title, int year) {
-        this.director = director;
-        this.title = title;
-        this.year = year;
-    }
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -87,9 +84,9 @@ public class MovieInfo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MovieInfo movieInfo = (MovieInfo) o;
-        return id == movieInfo.id &&
-                year == movieInfo.year &&
+        return year == movieInfo.year &&
                 rating == movieInfo.rating &&
+                Objects.equals(id, movieInfo.id) &&
                 Objects.equals(director, movieInfo.director) &&
                 Objects.equals(title, movieInfo.title) &&
                 Objects.equals(genre, movieInfo.genre);
@@ -98,5 +95,17 @@ public class MovieInfo {
     @Override
     public int hashCode() {
         return Objects.hash(id, director, title, year, genre, rating);
+    }
+
+    @Override
+    public String toString() {
+        return "MovieInfo{" +
+                "id=" + id +
+                ", director='" + director + '\'' +
+                ", title='" + title + '\'' +
+                ", year=" + year +
+                ", genre='" + genre + '\'' +
+                ", rating=" + rating +
+                '}';
     }
 }

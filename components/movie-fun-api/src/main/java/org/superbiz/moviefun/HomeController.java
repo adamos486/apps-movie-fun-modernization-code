@@ -1,10 +1,10 @@
 package org.superbiz.moviefun;
 
-import org.superbiz.moviefun.albumsapi.AlbumInfo;
-import org.superbiz.moviefun.albumsapi.AlbumsClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.superbiz.moviefun.albumsapi.AlbumFixtures;
+import org.superbiz.moviefun.albumsapi.AlbumInfo;
+import org.superbiz.moviefun.albumsapi.AlbumsClient;
 import org.superbiz.moviefun.moviesapi.MovieFixtures;
 import org.superbiz.moviefun.moviesapi.MovieInfo;
 import org.superbiz.moviefun.moviesapi.MoviesClient;
